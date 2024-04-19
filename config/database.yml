@@ -1,0 +1,28 @@
+default: &default
+   adapter: postgresql
+   encoding: unicode
+   port: 4000
+  
+development:
+   adapter: postgresql
+   encoding: unicode
+   database: medplus
+   username: postgres
+   password: as05102003
+   port: 4000
+
+test:
+   adapter: postgresql
+   encoding: unicode
+   database: medplus
+   username: postgres
+   password: as05102003
+   port: 4000
+ 
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: medplus
+  username: postgres
+  password: as05102003
+  port: 4000

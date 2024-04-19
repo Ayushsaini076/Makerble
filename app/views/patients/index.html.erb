@@ -1,0 +1,27 @@
+<td>
+  <% if can? :update, Patient %>
+    <%= link_to 'Edit', edit_patient_path(Patient) %>
+  <% end %>
+</td>
+<td>
+  <% if can? :destroy, Patient %>
+    <%= link_to 'Destroy', Patient, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+</td>
+
+<h1>Patients</h1>
+
+<div id="patients">
+  <% @patients.each do |patient| %>
+    <%= render patient %>
+    <p>
+      <%= link_to "Show this patient", patient %>
+    </p>
+  <% end %>
+</div>
+
+
+
+<% if can? :create, Patient %>
+<%= link_to "New patient", new_patient_path %>
+<% end %>
