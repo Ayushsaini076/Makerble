@@ -7,6 +7,10 @@ class PatientsController < ApplicationController
   # GET /patients or /patients.json
   def index
     @patients = Patient.all
+
+    respond_to do |format|
+      format.html
+    end
   end
 
   # GET /patients/1 or /patients/1.json
@@ -25,12 +29,12 @@ class PatientsController < ApplicationController
   # POST /patients or /patients.json
   def create
     
-    @patient.user_id = current_user.id
+    # @patient.user_id = current_user.id
     
     respond_to do |format|
       if @patient.save
-        format.html { redirect_to patient_url(@patient), notice: "Patient was successfully created." }
-        format.json { render :show, status: :created, location: @patient }
+        format.html { redirect_to patients_path, notice: "Patient was successfully created." }
+        format.json { render :index, status: :created, location: @patient }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @patient.errors, status: :unprocessable_entity }
@@ -42,8 +46,8 @@ class PatientsController < ApplicationController
   def update
     respond_to do |format|
       if @patient.update(patient_params)
-        format.html { redirect_to patient_url(@patient), notice: "Patient was successfully updated." }
-        format.json { render :show, status: :ok, location: @patient }
+        format.html { redirect_to patients_path, notice: "Patient was successfully updated." }
+        format.json { render :index, status: :ok, location: @patient }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @patient.errors, status: :unprocessable_entity }
@@ -56,7 +60,7 @@ class PatientsController < ApplicationController
     @patient.destroy!
 
     respond_to do |format|
-      format.html { redirect_to patients_url, notice: "Patient was successfully destroyed." }
+      format.html { redirect_to patients_path, notice: "Patient was successfully destroyed." }
       format.json { head :no_content }
     end
   end

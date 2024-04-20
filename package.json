@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "chart.js": "^4.4.2",
+    "chartkick": "^5.0.1",
     "tailwindcss": "^3.4.3"
   }
 }

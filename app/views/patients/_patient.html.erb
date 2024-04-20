@@ -1,22 +1,83 @@
-<div id="<%= dom_id patient %>">
-  <p>
-    <strong>Name:</strong>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="patient.css">
+  </head>
+  <body>
+	<div >
+  <div class="p-card" id="<%= dom_id patient %>">
+  <span>
+    
     <%= patient.name %>
-  </p>
+  </span>
 
-  <p>
-    <strong>Gender:</strong>
+  <span>
     <%= patient.gender %>
-  </p>
+  </span>
 
-  <p>
-    <strong>Age:</strong>
+  <span>
+    
     <%= patient.age %>
-  </p>
+  </span>
 
-  <p>
-    <strong>Disease:</strong>
+  <span>
     <%= patient.disease %>
-  </p>
+  </span>
+
+  <span>
+  <%= link_to(edit_patient_path(patient),class:"btn") do %>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="feather feather-edit"
+    >
+      <path d="M12 20h9"></path>
+      <path d="M16 3L21 8 8 21 3 21 3 16z"></path>
+    </svg>
+  <% end %>
+  
+  </span>
+  
+  
+  <span>
+  <%= button_to patient, method: :delete do %>
+    <!-- Material-UI Icon SVG (Delete Icon) -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="MuiSvgIcon-root MuiIcon-root"
+    >
+      <polyline points="3 6 5 6 21 6"></polyline>
+      <path d="M19 6V19a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+      <line x1="10" y1="3" x2="10" y2="9"></line>
+      <line x1="14" y1="3" x2="14" y2="9"></line>
+    </svg>
+    
+  <% end %>
+  </span>
 
 </div>
+
+  </div>
+  </body>
+</html>
+

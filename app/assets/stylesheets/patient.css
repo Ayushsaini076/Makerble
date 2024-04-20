@@ -1,0 +1,70 @@
+.p-parent{
+    height: max-content;
+    width: 98.8vw;
+    background-color: #E1EEFF;
+    position: absolute;
+    top: 4rem;
+    overflow: auto;
+}
+.p-header{
+    width: 95%;
+    margin-left: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.n-button{
+    display: flex;
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.7rem;
+    height: 1.2rem;
+    background-color: white;
+    font-size: 1.4rem;
+    padding: 1rem;
+    
+}
+.btn{
+    text-decoration: none;
+}
+.p-heading{
+    width: 95%;
+    height: 2rem;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    gap:5rem;
+    justify-items: center;
+    align-items: center;
+    font-size: 2rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #0360D9;
+    margin-left: 1.5rem;
+    color: white;
+}
+
+.p-card{
+    width: 95%;
+    height: 3rem;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    gap:5rem;
+    justify-items: center;
+    align-items: center;
+    font-size: 1.2rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: white;
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+.p-chart{
+    background-color: white;
+    width: 60%;
+    height: 40%;
+    margin-left: 20rem;
+}
+

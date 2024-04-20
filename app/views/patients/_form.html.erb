@@ -1,37 +1,57 @@
-<%= form_with(model: patient) do |form| %>
-  <% if patient.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
-
-      <ul>
-        <% patient.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="login.css">
+  </head>
+  <body>
+	<div class="login-page">
+  <div class="login-card">
+  <div class="login-main">
+  <%= form_with(model: patient) do |form| %>
+    <% if patient.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+  
+        <ul>
+          <% patient.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div>
+      <%= form.label :name, style: "display: block",class:"label" %>
+      <%= form.text_field :name,class:'input' %>
+    </div>
+  
+    <div>
+      <%= form.label :gender, style: "display: block",class:"label" %>
+      <%= form.text_field :gender,class:'input' %>
+    </div>
+  
+    <div>
+      <%= form.label :age, style: "display: block",class:"label" %>
+      <%= form.number_field :age,class:'input' %>
+    </div>
+  
+    <div>
+      <%= form.label :disease, style: "display: block",class:"label" %>
+      <%= form.text_field :disease,class:'input' %>
+    </div>
+  
+    <div>
+      <%= form.submit %>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  
   </div>
-
-  <div>
-    <%= form.label :gender, style: "display: block" %>
-    <%= form.text_field :gender %>
   </div>
-
-  <div>
-    <%= form.label :age, style: "display: block" %>
-    <%= form.number_field :age %>
   </div>
+  </body>
+</html>
 
-  <div>
-    <%= form.label :disease, style: "display: block" %>
-    <%= form.text_field :disease %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>

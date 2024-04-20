@@ -1,0 +1,45 @@
+.login-page{
+    /* position: absolute;
+    top: 20%;
+    left: 35%;
+    background-color: white;
+    width: 10rem;
+    height: 12rem; */
+    height: 88.5vh;
+    width: 98.8vw;
+    background-color: #E1EEFF;
+    position: absolute;
+    top: 4rem;
+}
+
+.login-card{
+    margin-left: 17rem;
+    /* margin-top: 5rem; */
+    width: 60rem;
+    height: 35rem;
+    padding: 2rem;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.label{
+    margin-top: 1rem;
+    font-size: 1.3rem;
+}
+.input{
+    height: 2rem;
+    width: 25rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding: 0.5rem;
+    background-color: #E3E3E3;
+}
+.submit{
+    background-color: #0360D9;
+    width: 15rem;
+    color: white;
+    padding: 0.5rem;
+    height: 2rem;
+    cursor: pointer;
+}

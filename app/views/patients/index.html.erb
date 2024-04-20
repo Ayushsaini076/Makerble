@@ -1,27 +1,66 @@
-<td>
-  <% if can? :update, Patient %>
-    <%= link_to 'Edit', edit_patient_path(Patient) %>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="patient.css">
+  </head>
+  <body>
+	<div class="p-parent">
+  <% if current_user.doctor? %>
+  <div class="p-chart">
+  <%= line_chart [["2024-04-01", 10], ["2024-04-02", 20], ["2024-04-03", 15]] %>
+  </div>
   <% end %>
-</td>
-<td>
-  <% if can? :destroy, Patient %>
-    <%= link_to 'Destroy', Patient, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+  <div class="p-header">
+  <h1>Patients</h1>
+  <div class="n-button">
+  <% if can? :create, Patient %>
+  <%= link_to(new_patient_path) do %>
+    <!-- Material-UI Icon SVG (Add Icon) -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="MuiSvgIcon-root MuiIcon-root"
+    >
+      <path d="M12 4v16m8-8H4"></path>
+    </svg>
+
   <% end %>
-</td>
-
-<h1>Patients</h1>
-
-<div id="patients">
-  <% @patients.each do |patient| %>
-    <%= render patient %>
-    <p>
-      <%= link_to "Show this patient", patient %>
-    </p>
+  
   <% end %>
-</div>
+  </div>
+  </div>
+  
+  <div class="p-heading">
+    <span>Name</span>
+    <span>Gender</span>
+    <span>Age</span>
+    <span>Disease</span>
+    <span>Edit</span>
+    <span>Delete</span>
+  </div>
+  <div id="patients">
+    <% @patients.each do |patient| %>
+      <%= render patient %>
+    <% end %>
+  </div>
 
+  
 
+  
+  </div>
+  </body>
+</html>
 
-<% if can? :create, Patient %>
-<%= link_to "New patient", new_patient_path %>
-<% end %>

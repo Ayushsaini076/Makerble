@@ -1,0 +1,35 @@
+.w-parent{
+    height: 88.5vh;
+    width: 98.8vw;
+    background-color: #E1EEFF;
+    position: relative;
+    /* margin-top: 3rem; */
+}
+.w-main{
+    display: flex;
+}
+.w-img{
+    height: 36rem;
+    width: 36rem;
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+}
+.w-bottom{
+    height: 4rem;
+    width: 98.8vw;
+    background-color: #0360D9;
+    position:absolute;
+    bottom: 0%;
+}
+.w-content{
+    position: absolute;
+    top: 25%;
+    left:5rem;
+}
+.w-heading{
+    font-size: 3rem;
+}
+.w-para{
+    font-size: 1.5rem;
+}
